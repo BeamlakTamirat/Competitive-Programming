@@ -1,0 +1,22 @@
+def solve():
+    matrix = []
+    # Read the 5x5 matrix
+    for _ in range(5):
+        row = list(map(int, input().split()))
+        matrix.append(row)
+    
+    # Find position of 1
+    x, y = 0, 0
+    for i in range(5):
+        for j in range(5):
+            if matrix[i][j] == 1:
+                x, y = i, j
+                break
+    
+    # Calculate minimum moves needed
+    # Moves needed = |current_row - target_row| + |current_column - target_column|
+    # Target position is (2,2) (0-based indexing)
+    moves = abs(x - 2) + abs(y - 2)
+    print(moves)
+
+solve()
