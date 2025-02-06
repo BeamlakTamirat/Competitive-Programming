@@ -1,0 +1,21 @@
+#The efficient way to solve this problem:
+
+def compare_strings():
+    # Read input strings
+    s1 = input()
+    s2 = input()
+    
+    # Convert both strings to lowercase for case-insensitive comparison
+    s1 = s1.lower()
+    s2 = s2.lower()
+    
+    # Compare strings
+    if s1 < s2:
+        return -1
+    elif s1 > s2:
+        return 1
+    else:
+        return 0
+
+# Print result
+print(compare_strings())
