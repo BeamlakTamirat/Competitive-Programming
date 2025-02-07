@@ -1,0 +1,16 @@
+def determine_gender(username):
+    # Get number of distinct characters using set
+    distinct_chars = len(set(username))
+    
+    # If number of distinct characters is odd -> male
+    # If number of distinct characters is even -> female
+    if distinct_chars % 2 == 0:
+        return "CHAT WITH HER!"
+    else:
+        return "IGNORE HIM!"
+
+# Get input
+username = input()
+
+# Print result
+print(determine_gender(username))
