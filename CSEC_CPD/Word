@@ -1,0 +1,15 @@
+def fix_word(s):
+    # Count uppercase and lowercase letters
+    upper_count = sum(1 for c in s if c.isupper())
+    lower_count = len(s) - upper_count
+    
+    # If uppercase count is greater, convert to uppercase
+    # Otherwise (if lowercase count is greater or equal), convert to lowercase
+    if upper_count > lower_count:
+        return s.upper()
+    else:
+        return s.lower()
+
+# Get input and print result
+word = input()
+print(fix_word(word))
