@@ -1,0 +1,18 @@
+def calculate_calories():
+    a1, a2, a3, a4 = map(int, input().split())
+    s = input()
+    
+    calories = {
+        '1': a1,
+        '2': a2,
+        '3': a3,
+        '4': a4
+    }
+    
+    total = 0
+    for strip in s:
+        total += calories[strip]
+        
+    return total
+
+print(calculate_calories())
