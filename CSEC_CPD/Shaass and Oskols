@@ -1,0 +1,23 @@
+n = int(input())
+a = list(map(int, input().split()))
+m = int(input())
+
+for _ in range(m):
+    x, y = map(int, input().split())
+    x_idx = x - 1  # convert to 0-based index
+    current = a[x_idx]
+    left = y - 1
+    right = current - y
+    
+    # Move left birds to upper wire
+    if x_idx - 1 >= 0:
+        a[x_idx - 1] += left
+    
+    # Move right birds to lower wire
+    if x_idx + 1 < n:
+        a[x_idx + 1] += right
+    
+    # Current wire has no birds left
+    a[x_idx] = 0
+
+print('\n'.join(map(str, a)))
