@@ -1,0 +1,35 @@
+def solve_card_game():
+    # Read input
+    n = int(input())
+    cards = list(map(int, input().split()))
+    
+    # Initialize variables
+    left = 0           # Left pointer
+    right = n - 1     # Right pointer
+    sereja = 0        # Sereja's points
+    dima = 0          # Dima's points
+    turn = 0          # 0 for Sereja's turn, 1 for Dima's turn
+    
+    # Continue until all cards are taken
+    while left <= right:
+        # Determine which card to take
+        if cards[left] > cards[right]:
+            card = cards[left]
+            left += 1
+        else:
+            card = cards[right]
+            right -= 1
+            
+        # Add points to respective player
+        if turn == 0:
+            sereja += card
+        else:
+            dima += card
+            
+        # Switch turns
+        turn = 1 - turn
+    
+    print(sereja, dima)
+
+# Run the solution
+solve_card_game()
