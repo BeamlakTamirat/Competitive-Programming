@@ -1,0 +1,19 @@
+def untreated_crimes():
+    n = int(input())
+    events = list(map(int, input().split()))
+    
+    police = 0
+    untreated = 0
+    
+    for event in events:
+        if event > 0:
+            police += event
+        else:  # crime occurred
+            if police > 0:
+                police -= 1
+            else:
+                untreated += 1
+                
+    return untreated
+
+print(untreated_crimes())
