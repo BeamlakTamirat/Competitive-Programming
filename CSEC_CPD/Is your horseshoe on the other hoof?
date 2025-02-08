@@ -1,0 +1,3 @@
+s = list(map(int, input().split()))
+unique = len(set(s))
+print(4 - unique)
