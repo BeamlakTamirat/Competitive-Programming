@@ -1,0 +1,14 @@
+def min_rotations():
+    name = input()
+    current = 'a'
+    moves = 0
+    
+    for char in name:
+        pos1 = abs(ord(char) - ord(current))
+        pos2 = 26 - pos1
+        moves += min(pos1, pos2)
+        current = char
+        
+    return moves
+
+print(min_rotations())
