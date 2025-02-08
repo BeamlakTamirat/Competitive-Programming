@@ -1,0 +1,8 @@
+s = input().strip()
+t = input().strip()
+
+pos = 1  # 1-based position
+for c in t:
+    if pos - 1 < len(s) and s[pos - 1] == c:
+        pos += 1
+print(pos)
